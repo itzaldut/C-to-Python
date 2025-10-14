@@ -7,12 +7,12 @@
 // we will tell the compiler to treat the code below a C code
 // generating the library
 
-#ifdef EXTERNC
+#ifdef _cplusplus
 extern "C" {
 #endif
 
 // estimate pi from the dart throwing method
-double findPi(long nthrows=100*1000*1000){
+double findPi(long nthrows){
   srand48((long)time(NULL));
   long count=0;
   for (int i=0; i<nthrows; ++i){
@@ -77,7 +77,7 @@ void mandel(double *img, double re1, double re2, double im1, double im2,
 
   
 
-#ifdef EXTERNC
+#ifdef _cplusplus
 }
 #endif
 
